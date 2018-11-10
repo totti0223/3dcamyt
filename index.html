@@ -3,23 +3,22 @@
   <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 </head>
+
 <body style='margin:0px; overflow:hidden;'>
-
-<a-assets>
-	<a-asset-item id="aba_obj" src="out.obj"></a-asset-item>
-	<a-asset-item id="aba_mtl" src="out.mtl"></a-asset-item>
-</a-assets>
-
-<a-scene embedded arjs="debugUIEnabled:false">
-
-  <a-marker-camera type="pattern" src="pattern-marker.patt">
-    <a-entity>
-  	<a-obj-model src="#aba_obj" mtl="#aba_mtl" position = "0 0 0" scale="0.1 0.1 0.1" visible="true"></a-obj-model>
-  	<a-animation attribute="rotation" dur="5000" fill="forwards" to="0 0 360" repeat="indefinite"></a-animation>
-  	</a-entity> 
-  </a-marker-camera>
-<!--<a-entity camera></a-entity>-->
-</a-scene>
+  <a-assets>
+    <a-asset-item id="aba_obj" src="out.obj"></a-asset-item>
+    <a-asset-item id="aba_mtl" src="out.mtl"></a-asset-item>
+  </a-assets>
+  
+  <a-scene embedded arjs="debugUIEnabled:false">
+    <a-marker type="pattern" src="pattern-marker.patt">
+      <a-entity>
+        <a-obj-model src="#aba_obj" mtl="#aba_mtl" position = "0 0 0" scale="0.1 0.1 0.1" visible="true"></a-obj-model>
+        <a-animation attribute="rotation" dur="5000" fill="forwards" to="0 0 360" repeat="indefinite"></a-animation>
+      </a-entity> 
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
 
 </body>
 </html>
